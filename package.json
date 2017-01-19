@@ -1,7 +1,7 @@
 {
   "name": "gulp-htmltemplate-js",
   "version": "1.0.0",
-  "description": "gulp plugin creates javascript object out of template with translations",
+  "description": "gulp plugin creates javascript object out of template (with) translations",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/kris444/gulp-htmltemplate-js/issues"
   },
-  "homepage": "https://github.com/kris444/gulp-htmltemplate-js#readme"
+  "homepage": "https://github.com/kris444/gulp-htmltemplate-js#readme",
+   "dependencies": {
+    "cheerio": "^0.22.0",
+    "gulp-util": "^3.0.8",
+    "lodash": "^4.17.4",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": { 
+  }
 }
