@@ -19,7 +19,7 @@
     "template"
   ],
   "author": "kris444",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kris444/gulp-htmltemplate-js/issues"
   },

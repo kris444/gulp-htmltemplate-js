@@ -11,7 +11,7 @@ Write your templates in html with i18n attributes, plugin takes care of converti
 
 ```js
 var gulp = require('gulp');
-var htmltemplate2Js = require('./src/templates/htmltemplates.js');
+var htmltemplate2Js = require('htmltemplate-2-js-i18n');
 
 gulp.task('template', function() {
 	return gulp.src('exampleTemplates.html' )
@@ -23,7 +23,7 @@ Additional options can be passed by passing an object as the main arguments
 
 ```js
 var gulp = require('gulp');
-var htmltemplate2Js = require('./src/templates/htmltemplates.js');
+var htmltemplate2Js = require('htmltemplate-2-js-i18n');
 
 gulp.task('template', function() {
 	return gulp.src('exampleTemplates.html' )
