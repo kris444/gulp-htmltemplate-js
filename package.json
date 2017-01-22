@@ -1,5 +1,5 @@
 {
-  "name": "gulp-htmltemplate-js",
+  "name": "htmltemplate-2-js-i18n",
   "version": "1.0.0",
   "description": "gulp plugin creates javascript object out of template (with) translations",
   "main": "index.js",
