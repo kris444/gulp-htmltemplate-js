@@ -4,7 +4,7 @@ var through = require('through2');
 var cheerio = require("cheerio");
 var fs = require("fs");
 
-const PLUGIN_NAME = 'gulp-htmltemplate-js';
+const PLUGIN_NAME = 'htmltemplate-2-js-i18n';
 module.exports = function (options) {
     var defaultOptions = {
         'ext': 'js'

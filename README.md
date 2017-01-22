@@ -1,4 +1,4 @@
-# gulp-htmltemplate-js
+# htmltemplate-2-js-i18n
  
 
 gulp plugin that translates html templates define into as a javascript object with templates as a sstring.
@@ -74,6 +74,6 @@ and
 **output is :**
 
 ```js
- var htmlTemplates = {"test1-en":"<div class=\"consent-content\" data-i18n key='text'>value</div>", 
-                      "test1-fr":"<div class=\"consent-content\" data-i18n key='text'>F value</div>"}
+ var htmlTemplates = {"test1-en":"<div class=\"consent-content\">value</div>", 
+                      "test1-fr":"<div class=\"consent-content\">F value</div>"}
 ```
