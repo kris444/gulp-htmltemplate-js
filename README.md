@@ -1,11 +1,9 @@
 # htmltemplate-2-js-i18n
  
 
-gulp plugin that translates html templates define into as a javascript object with templates as a sstring.
+gulp plugin that translates html templates define into as a javascript object with templates as a string. plugin also facilitates translations applied from translation file provided.
 
-plugin also facilitates translations applied from translation file provided.
-
-Write your templates in html with i18n attributes, plugin takes care of converting as javascript object by applying translations
+Write your templates in html with i18n json file, plugin takes care of converting as javascript object by applying translations
 
 ##Usage
 
@@ -33,7 +31,7 @@ gulp.task('template', function() {
 	.pipe(gulp.dest('output') );
 });
 ```
-Translations expected in the following format 
+Translations expected 
 
 ```json
 {
@@ -41,7 +39,7 @@ Translations expected in the following format
         "key": "value"
     },
     "fr": {
-        "key": "F value"
+        "key": "valeur"
     }
 }
 ```
@@ -75,5 +73,5 @@ and
 
 ```js
  var htmlTemplates = {"test1-en":"<div class=\"consent-content\">value</div>", 
-                      "test1-fr":"<div class=\"consent-content\">F value</div>"}
+                      "test1-fr":"<div class=\"consent-content\">valeur</div>"}
 ```

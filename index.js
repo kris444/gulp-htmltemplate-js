@@ -61,7 +61,7 @@ function translateTemplate(chunk, options) {
                     node(e).removeAttr('data-i18n');
                 })
 
-                var text = node.html();
+                var text = node.html({ decodeEntities: false });
                 text = text.replace(/&apos;/g, "'").replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"');
                 data[id + '-' + lan] = text;
             }
