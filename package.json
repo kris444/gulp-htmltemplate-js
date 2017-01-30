@@ -1,6 +1,6 @@
 {
   "name": "htmltemplate-2-js-i18n",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gulp plugin creates javascript object out of template (with) translations",
   "main": "index.js",
   "scripts": {
@@ -24,12 +24,11 @@
     "url": "https://github.com/kris444/gulp-htmltemplate-js/issues"
   },
   "homepage": "https://github.com/kris444/gulp-htmltemplate-js#readme",
-   "dependencies": {
+  "dependencies": {
     "cheerio": "^0.22.0",
     "gulp-util": "^3.0.8",
     "lodash": "^4.17.4",
     "through2": "^2.0.3"
   },
-  "devDependencies": { 
-  }
+  "devDependencies": {}
 }
