@@ -31,7 +31,7 @@ gulp.task('template', function() {
 	.pipe(gulp.dest('output') );
 });
 ```
-Translations expected 
+Translations expected in the format
 
 ```json
 {
@@ -44,7 +44,7 @@ Translations expected
 }
 ```
 
-##Examples
+## Examples
 
 **template**
 ```html
@@ -64,7 +64,7 @@ and
         "text": "value"
     },
     "fr": {
-        "text": "F value"
+        "text": "valeur"
     }
 }
 ```
