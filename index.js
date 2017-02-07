@@ -7,13 +7,15 @@ var fs = require("fs");
 const PLUGIN_NAME = 'htmltemplate-2-js-i18n';
 module.exports = function (options) {
     var defaultOptions = {
-        'ext': 'js'
+        'ext': 'js', 
+        'preservei18nKeys':false
     };
 
     if (!options) {
         options = defaultOptions
     }
     options.ext = options.ext === undefined ? defaultOptions.ext : options.ext;
+    options.preservei18nKeys = options.preservei18nKeys === undefined ? defaultOptions.preservei18nKeys : options.preservei18nKeys;
     return through.obj(function (chunk, enc, callback) {
         if (chunk.isNull()) {
             callback(null, chunk);
@@ -47,6 +49,7 @@ function translateTemplate(chunk, options) {
     var $ = cheerio.load(chunk.contents.toString(), cheerioProp);
     var translations = options.i18nfile ? JSON.parse(fs.readFileSync(options.i18nfile)) : null;
     var data = {};
+    var replace = function(text){ return text.replace(/&apos;/g, "'").replace(/&gt;/g, ">").replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&quot;/g, '"'); }
     $('#htmlTemplates').children().each(function (i, element) {
         var id = $(element).attr('id');
         if (translations) {
@@ -57,18 +60,20 @@ function translateTemplate(chunk, options) {
                     if (key !== undefined) {
                         node(e).prepend(translations[lan][key]);
                     }
-                    node(e).removeAttr('key');
-                    node(e).removeAttr('data-i18n');
+                    if(!options.preservei18nKeys){
+                     node(e).removeAttr('key');
+                     node(e).removeAttr('data-i18n');
+                    }
                 })
 
-                var text = node.html({ decodeEntities: false });
-                text = text.replace(/&apos;/g, "'").replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"');
+                var text = node.html();
+                text = replace(text);
                 data[id + '-' + lan] = text;
             }
         }
         else {
             var text = $(element).html();
-            text = text.replace(/&apos;/g, "'").replace(/&amp;/g, "&").replace(/&gt;/g, ">").replace(/&lt;/g, "<").replace(/&quot;/g, '"');
+            text = replace(text)
             data[$(element).attr('id')] = text;
         }
     });
